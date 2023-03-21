@@ -1,8 +1,11 @@
 <resources>
-    <string name="app_name">KW Library for Wear OS</string>
-    <!--
-    This string is used for square devices and overridden by hello_world in
-    values-round/strings.xml for round devices.
-    -->
-    <string name="hello_world">From the Square world,\nHello, %1$s!</string>
+    <string name="app_name">KW 도서관</string>
+
+    <string name="input_account">계정 정보 입력</string>
+
+    <string name="id">학번</string>
+    <string name="password">비밀번호</string>
+    <string name="phone_number">전화번호</string>
+
+    <string name="unspecified">미입력</string>
 </resources>
