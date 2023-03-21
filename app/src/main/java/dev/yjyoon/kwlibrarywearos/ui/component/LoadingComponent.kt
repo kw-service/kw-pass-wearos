@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.wear.compose.material.CircularProgressIndicator
+import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
 import dev.yjyoon.kwlibrarywearos.ui.theme.White87
 
@@ -25,7 +26,11 @@ fun LoadingComponent(
     ) {
         CircularProgressIndicator(indicatorColor = White87)
         textRes?.let {
-            Text(text = stringResource(id = it), modifier = Modifier.padding(top = 12.dp))
+            Text(
+                text = stringResource(id = it),
+                style = MaterialTheme.typography.caption2,
+                modifier = Modifier.padding(top = 12.dp)
+            )
         }
     }
 }
