@@ -30,6 +30,6 @@ enum class AccountInputType(
     )
 }
 
-val INPUT_KEY_ID = "INPUT_KEY_ID"
-val INPUT_KEY_PW = "INPUT_KEY_PW"
-val INPUT_KEY_PHONE = "INPUT_KEY_PN"
+const val INPUT_KEY_ID = "INPUT_KEY_ID"
+const val INPUT_KEY_PW = "INPUT_KEY_PW"
+const val INPUT_KEY_PHONE = "INPUT_KEY_PHONE"
