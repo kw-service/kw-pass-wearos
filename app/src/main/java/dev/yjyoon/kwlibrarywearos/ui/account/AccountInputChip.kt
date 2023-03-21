@@ -35,6 +35,7 @@ fun KwLibraryChip(
             .setLabel(stringResource(type.stringResId))
             .wearableExtender {
                 setInputActionType(EditorInfo.IME_ACTION_DONE)
+                setEmojisAllowed(false)
             }.build()
     )
 
