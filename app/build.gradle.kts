@@ -25,8 +25,8 @@ android {
         release {
             isMinifyEnabled = false
             proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
             )
         }
     }
@@ -80,6 +80,9 @@ dependencies {
     implementation(libs.ktor.content.negotiation)
     implementation(libs.ktor.client.logging)
     implementation(libs.logback.classic)
+
+    implementation(libs.coil.compose)
+    implementation(libs.zxing.android.embedded)
 
     implementation(libs.google.hilt.android)
     kapt(libs.google.hilt.compiler)
