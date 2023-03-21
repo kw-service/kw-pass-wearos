@@ -1,5 +1,9 @@
 package dev.yjyoon.kwlibrarywearos.ui.account
 
+import android.app.RemoteInput
+import android.os.Bundle
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,10 +12,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
-import androidx.compose.material.icons.outlined.Badge
-import androidx.compose.material.icons.outlined.Password
-import androidx.compose.material.icons.outlined.Smartphone
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
@@ -38,12 +41,27 @@ import dev.yjyoon.kwlibrarywearos.ui.component.KwLibraryChip
 @OptIn(ExperimentalHorologistComposeLayoutApi::class)
 @Composable
 fun AccountScreen(
-    onLogin: () -> Unit
+    viewModel: AccountViewModel
 ) {
+    val state by viewModel.uiState.collectAsState()
+
     val listState = rememberScalingLazyListState()
     val vignetteState = remember { mutableStateOf(VignettePosition.TopAndBottom) }
     val showVignette = remember { mutableStateOf(true) }
     val focusRequester = remember { FocusRequester() }
+
+    val launcher =
+        rememberLauncherForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            result.data?.let { data ->
+                val results: Bundle = RemoteInput.getResultsFromIntent(data)
+
+                results.getCharSequence(INPUT_KEY_ID)?.toString()?.let { viewModel.setId(it) }
+                results.getCharSequence(INPUT_KEY_PW)?.toString()?.let { viewModel.setPassword(it) }
+                results.getCharSequence(INPUT_KEY_PHONE)?.toString()?.let { viewModel.setPhone(it) }
+            }
+        }
 
     Scaffold(
         positionIndicator = {
@@ -78,28 +96,25 @@ fun AccountScreen(
             }
             item {
                 KwLibraryChip(
-                    icon = Icons.Outlined.Badge,
-                    label = stringResource(id = R.string.id),
-                    secondaryLabel = null,
-                    onClick = {},
+                    type = AccountInputType.Id,
+                    input = state.id,
+                    onClick = { launcher.launch(it) },
                     modifier = Modifier.fillMaxWidth()
                 )
             }
             item {
                 KwLibraryChip(
-                    icon = Icons.Outlined.Password,
-                    label = stringResource(id = R.string.password),
-                    secondaryLabel = null,
-                    onClick = {},
+                    type = AccountInputType.Password,
+                    input = state.password,
+                    onClick = { launcher.launch(it) },
                     modifier = Modifier.fillMaxWidth()
                 )
             }
             item {
                 KwLibraryChip(
-                    icon = Icons.Outlined.Smartphone,
-                    label = stringResource(id = R.string.phone_number),
-                    secondaryLabel = null,
-                    onClick = {},
+                    type = AccountInputType.Phone,
+                    input = state.phone,
+                    onClick = { launcher.launch(it) },
                     modifier = Modifier.fillMaxWidth()
                 )
             }
@@ -108,7 +123,7 @@ fun AccountScreen(
             }
             item {
                 Button(
-                    onClick = onLogin
+                    onClick = { }
                 ) {
                     Icon(imageVector = Icons.Default.Check, contentDescription = null)
                 }
