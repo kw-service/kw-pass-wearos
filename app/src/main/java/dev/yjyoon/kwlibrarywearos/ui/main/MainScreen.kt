@@ -1,14 +1,10 @@
 package dev.yjyoon.kwlibrarywearos.ui.main
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.wear.compose.material.CircularProgressIndicator
-import dev.yjyoon.kwlibrarywearos.ui.theme.White87
+import dev.yjyoon.kwlibrarywearos.R
+import dev.yjyoon.kwlibrarywearos.ui.component.LoadingComponent
 
 @Composable
 fun MainScreen(
@@ -25,20 +21,10 @@ fun MainScreen(
             navigateToAccount()
         }
         MainUiState.Loading -> {
-            Loading()
+            LoadingComponent(textRes = R.string.check_account)
         }
         is MainUiState.Failure -> {
             //TODO
         }
-    }
-}
-
-@Composable
-fun Loading() {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        CircularProgressIndicator(indicatorColor = White87)
     }
 }
