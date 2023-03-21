@@ -1,44 +1,32 @@
 package dev.yjyoon.kwlibrarywearos.ui.main
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.wear.compose.material.CircularProgressIndicator
-import dev.yjyoon.kwlibrarywearos.ui.theme.White87
+import dev.yjyoon.kwlibrarywearos.R
+import dev.yjyoon.kwlibrarywearos.ui.component.LoadingComponent
+import dev.yjyoon.kwlibrarywearos.ui.model.User
 
 @Composable
 fun MainScreen(
     viewModel: MainViewModel,
-    navigateToAccount: () -> Unit
+    navigateToAccount: () -> Unit,
+    navigateToQrCode: (User) -> Unit
 ) {
-    val uiState by viewModel.uiState.collectAsState()
+    val state by viewModel.uiState.collectAsState()
 
-    when (uiState) {
+    when (state) {
         is MainUiState.SignedIn -> {
-            //TODO: QR Code Screen
+            navigateToQrCode((state as MainUiState.SignedIn).user)
         }
         MainUiState.NeedToSignIn -> {
             navigateToAccount()
         }
         MainUiState.Loading -> {
-            Loading()
+            LoadingComponent(textRes = R.string.check_account)
         }
         is MainUiState.Failure -> {
             //TODO
         }
-    }
-}
-
-@Composable
-fun Loading() {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        CircularProgressIndicator(indicatorColor = White87)
     }
 }

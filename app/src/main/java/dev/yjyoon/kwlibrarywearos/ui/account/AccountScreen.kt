@@ -19,12 +19,14 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.wear.compose.foundation.lazy.AutoCenteringParams
 import androidx.wear.compose.foundation.lazy.ScalingLazyColumn
 import androidx.wear.compose.foundation.lazy.rememberScalingLazyListState
 import androidx.wear.compose.material.Button
+import androidx.wear.compose.material.ButtonDefaults
 import androidx.wear.compose.material.Icon
 import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.PositionIndicator
@@ -37,11 +39,15 @@ import com.google.android.horologist.compose.navscaffold.ExperimentalHorologistC
 import com.google.android.horologist.compose.rotaryinput.rotaryWithScroll
 import dev.yjyoon.kwlibrarywearos.R
 import dev.yjyoon.kwlibrarywearos.ui.component.KwLibraryChip
+import dev.yjyoon.kwlibrarywearos.ui.model.User
+import dev.yjyoon.kwlibrarywearos.ui.theme.Primary
+import dev.yjyoon.kwlibrarywearos.ui.theme.White87
 
 @OptIn(ExperimentalHorologistComposeLayoutApi::class)
 @Composable
 fun AccountScreen(
-    viewModel: AccountViewModel
+    viewModel: AccountViewModel,
+    navigateToQrCode: (User) -> Unit
 ) {
     val state by viewModel.uiState.collectAsState()
 
@@ -105,7 +111,7 @@ fun AccountScreen(
             item {
                 KwLibraryChip(
                     type = AccountInputType.Password,
-                    input = state.password,
+                    input = state.password?.let { "●".repeat(it.length) },
                     onClick = { launcher.launch(it) },
                     modifier = Modifier.fillMaxWidth()
                 )
@@ -123,8 +129,13 @@ fun AccountScreen(
             }
             item {
                 Button(
-                    onClick = { },
-                    enabled = state.filled
+                    onClick = { navigateToQrCode(viewModel.getUser()) },
+                    enabled = state.filled,
+                    colors = ButtonDefaults.buttonColors(
+                        backgroundColor = White87,
+                        contentColor = Primary,
+                        disabledContentColor = Color.Black
+                    )
                 ) {
                     Icon(imageVector = Icons.Default.Check, contentDescription = null)
                 }

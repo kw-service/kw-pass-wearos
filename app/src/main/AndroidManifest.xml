@@ -33,6 +33,8 @@
         </activity>
 
         <activity android:name=".ui.account.AccountActivity" />
+
+        <activity android:name=".ui.qrcode.QrCodeActivity" />
     </application>
 
 </manifest>

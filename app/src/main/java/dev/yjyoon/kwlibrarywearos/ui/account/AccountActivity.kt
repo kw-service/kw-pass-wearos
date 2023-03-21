@@ -7,6 +7,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import dagger.hilt.android.AndroidEntryPoint
+import dev.yjyoon.kwlibrarywearos.ui.model.User
+import dev.yjyoon.kwlibrarywearos.ui.qrcode.QrCodeActivity
 import dev.yjyoon.kwlibrarywearos.ui.theme.KwLibraryTheme
 
 @AndroidEntryPoint
@@ -18,15 +20,22 @@ class AccountActivity : ComponentActivity() {
 
         setContent {
             KwLibraryTheme {
-                AccountScreen(viewModel)
+                AccountScreen(
+                    viewModel = viewModel,
+                    navigateToQrCode = ::startQrCodeActivity
+                )
             }
         }
+    }
+
+    private fun startQrCodeActivity(user: User) {
+        QrCodeActivity.startActivity(this, user)
+        finish()
     }
 
     companion object {
         fun startActivity(context: Context) {
             val intent = Intent(context, AccountActivity::class.java)
-                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
             context.startActivity(intent)
         }
     }
