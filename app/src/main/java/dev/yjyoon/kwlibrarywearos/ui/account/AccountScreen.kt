@@ -123,7 +123,8 @@ fun AccountScreen(
             }
             item {
                 Button(
-                    onClick = { }
+                    onClick = { },
+                    enabled = state.filled
                 ) {
                     Icon(imageVector = Icons.Default.Check, contentDescription = null)
                 }
