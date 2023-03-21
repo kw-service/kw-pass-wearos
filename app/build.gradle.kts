@@ -1,6 +1,8 @@
 plugins {
-    id("com.android.application")
     kotlin("android")
+    kotlin("kapt")
+    id("com.android.application")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -55,6 +57,7 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.viewmodel.ktx)
     implementation(libs.androidx.viewmodel.compose)
+    implementation(libs.androidx.splashscreen)
 
     implementation(libs.compose.foundation)
     implementation(libs.compose.ui.tooling.preview)
@@ -69,7 +72,12 @@ dependencies {
     implementation(libs.horologist.compose.layout)
     implementation(libs.wear.input)
 
-    implementation(libs.androidx.splashscreen)
+    implementation(libs.google.hilt.android)
+    kapt(libs.google.hilt.compiler)
 
     debugImplementation(libs.compose.ui.tooling)
+}
+
+kapt {
+    correctErrorTypes = true
 }

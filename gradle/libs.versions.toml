@@ -13,6 +13,7 @@ wear-compose = "1.2.0-alpha05"
 wear-input = "1.2.0-alpha02"
 
 horologist = "0.3.9"
+dagger = "2.45"
 
 [libraries]
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "org-jetbrains-kotlin" }
@@ -37,6 +38,11 @@ wear-compose-material = { module = "androidx.wear.compose:compose-material", ver
 wear-compose-navigation = { module = "androidx.wear.compose:compose-navigation", version.ref = "wear-compose" }
 wear-input = { module = "androidx.wear:wear-input", version.ref = "wear-input" }
 
+google-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "dagger" }
+google-hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "dagger" }
+javax-inject = "javax.inject:javax.inject:1"
+
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "android-gradle-plugin" }
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin" }
+com-google-hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "dagger" }
