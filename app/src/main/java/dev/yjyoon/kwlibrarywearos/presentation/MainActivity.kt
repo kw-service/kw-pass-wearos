@@ -24,7 +24,7 @@ import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
 import dagger.hilt.android.AndroidEntryPoint
 import dev.yjyoon.kwlibrarywearos.R
-import dev.yjyoon.kwlibrarywearos.presentation.theme.KWLibraryForWearOSTheme
+import dev.yjyoon.kwlibrarywearos.presentation.theme.KwLibraryTheme
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -38,7 +38,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun WearApp(greetingName: String) {
-    KWLibraryForWearOSTheme {
+    KwLibraryTheme {
         /* If you have enough items in your list, use [ScalingLazyColumn] which is an optimized
          * version of LazyColumn for wear devices with some added features. For more information,
          * see d.android.com/wear/compose.
