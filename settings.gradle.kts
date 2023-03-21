@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "KW Library for Wear OS"
-include ':app'
+include(":app")
