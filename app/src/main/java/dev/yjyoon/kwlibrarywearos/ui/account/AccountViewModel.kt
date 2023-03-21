@@ -2,6 +2,7 @@ package dev.yjyoon.kwlibrarywearos.ui.account
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dev.yjyoon.kwlibrarywearos.ui.model.User
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
@@ -16,4 +17,10 @@ class AccountViewModel @Inject constructor() : ViewModel() {
     fun setId(id: String) = _uiState.update { it.copy(id = id) }
     fun setPassword(password: String) = _uiState.update { it.copy(password = password) }
     fun setPhone(phone: String) = _uiState.update { it.copy(phone = phone) }
+    fun getUser() =
+        User(
+            id = _uiState.value.id,
+            password = _uiState.value.password,
+            phone = _uiState.value.phone
+        )
 }

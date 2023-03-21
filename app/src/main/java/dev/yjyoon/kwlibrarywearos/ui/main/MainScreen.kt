@@ -5,17 +5,19 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import dev.yjyoon.kwlibrarywearos.R
 import dev.yjyoon.kwlibrarywearos.ui.component.LoadingComponent
+import dev.yjyoon.kwlibrarywearos.ui.model.User
 
 @Composable
 fun MainScreen(
     viewModel: MainViewModel,
-    navigateToAccount: () -> Unit
+    navigateToAccount: () -> Unit,
+    navigateToQrCode: (User) -> Unit
 ) {
-    val uiState by viewModel.uiState.collectAsState()
+    val state by viewModel.uiState.collectAsState()
 
-    when (uiState) {
+    when (state) {
         is MainUiState.SignedIn -> {
-            //TODO: QR Code Screen
+            navigateToQrCode((state as MainUiState.SignedIn).user)
         }
         MainUiState.NeedToSignIn -> {
             navigateToAccount()

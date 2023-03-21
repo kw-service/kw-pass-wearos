@@ -18,7 +18,7 @@ class MainViewModel @Inject constructor() : ViewModel() {
     init {
         viewModelScope.launch {
             //TODO: Load account data from local storage
-            delay(3000L)
+            delay(1500L)
             _uiState.value = MainUiState.NeedToSignIn
         }
     }
