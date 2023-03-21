@@ -4,7 +4,7 @@
  * changes to the libraries and their usages.
  */
 
-package dev.yjyoon.kwlibrarywearos.presentation
+package dev.yjyoon.kwlibrarywearos.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -24,7 +24,7 @@ import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
 import dagger.hilt.android.AndroidEntryPoint
 import dev.yjyoon.kwlibrarywearos.R
-import dev.yjyoon.kwlibrarywearos.presentation.theme.KwLibraryTheme
+import dev.yjyoon.kwlibrarywearos.ui.theme.KwLibraryTheme
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {

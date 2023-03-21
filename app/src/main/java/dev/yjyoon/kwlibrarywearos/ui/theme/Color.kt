@@ -1,4 +1,4 @@
-package dev.yjyoon.kwlibrarywearos.presentation.theme
+package dev.yjyoon.kwlibrarywearos.ui.theme
 
 import androidx.compose.ui.graphics.Color
 import androidx.wear.compose.material.Colors
