@@ -24,6 +24,7 @@ import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
 import dagger.hilt.android.AndroidEntryPoint
 import dev.yjyoon.kwlibrarywearos.R
+import dev.yjyoon.kwlibrarywearos.ui.account.AccountScreen
 import dev.yjyoon.kwlibrarywearos.ui.theme.KwLibraryTheme
 
 @AndroidEntryPoint
@@ -31,7 +32,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            WearApp("Android")
+            KwLibraryTheme {
+                AccountScreen()
+            }
         }
     }
 }
