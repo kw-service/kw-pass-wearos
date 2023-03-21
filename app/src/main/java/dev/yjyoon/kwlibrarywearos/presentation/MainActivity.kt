@@ -22,9 +22,11 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
+import dagger.hilt.android.AndroidEntryPoint
 import dev.yjyoon.kwlibrarywearos.R
 import dev.yjyoon.kwlibrarywearos.presentation.theme.KWLibraryForWearOSTheme
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
