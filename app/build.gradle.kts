@@ -48,6 +48,7 @@ android {
     packagingOptions {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes += "/META-INF/INDEX.LIST"
         }
     }
 }
@@ -57,7 +58,9 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.viewmodel.ktx)
     implementation(libs.androidx.viewmodel.compose)
+
     implementation(libs.androidx.splashscreen)
+    implementation(libs.androidx.datastore.preferences)
 
     implementation(libs.compose.foundation)
     implementation(libs.compose.ui.tooling.preview)
@@ -71,6 +74,12 @@ dependencies {
     implementation(libs.horologist.composables)
     implementation(libs.horologist.compose.layout)
     implementation(libs.wear.input)
+
+    implementation(libs.ktor.client.android)
+    implementation(libs.ktor.serialization.json)
+    implementation(libs.ktor.content.negotiation)
+    implementation(libs.ktor.client.logging)
+    implementation(libs.logback.classic)
 
     implementation(libs.google.hilt.android)
     kapt(libs.google.hilt.compiler)
