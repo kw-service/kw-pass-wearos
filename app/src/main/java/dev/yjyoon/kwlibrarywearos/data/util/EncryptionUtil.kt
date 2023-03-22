@@ -1,4 +1,4 @@
-package dev.yjyoon.kwlibrarywearos.ui.util
+package dev.yjyoon.kwlibrarywearos.data.util
 
 import android.util.Base64
 import javax.crypto.Cipher
