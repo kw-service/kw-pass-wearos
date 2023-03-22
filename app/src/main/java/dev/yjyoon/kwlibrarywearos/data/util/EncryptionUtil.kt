@@ -7,10 +7,10 @@ import javax.crypto.spec.SecretKeySpec
 
 object EncryptionUtil {
 
-    private const val SECRET_IV = "1234567812345678"
+    private val SECRET_IV = ByteArray(16) { 0 }
 
     fun String.encrypt(secretKey: String): String {
-        val iv = IvParameterSpec(SECRET_IV.toByteArray())
+        val iv = IvParameterSpec(SECRET_IV)
         val keySpec = SecretKeySpec(secretKey.toByteArray(), "AES")
         val cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING").apply {
             init(Cipher.ENCRYPT_MODE, keySpec, iv)
