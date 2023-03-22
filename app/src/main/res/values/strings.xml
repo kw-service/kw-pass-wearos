@@ -12,8 +12,9 @@
     <string name="check_account">계정 정보 확인 중...</string>
     <string name="load_qrcode">QR Code 로딩 중...</string>
 
-    <string name="network_error">네트워크 연결 상태를\n확인해주세요</string>
-    
+    <string name="network_error">네트워크 오류</string>
+    <string name="check_network">연결 상태를 확인해주세요</string>
+
     <string name="signin_error">로그인 오류</string>
     <string name="input_again">다시 입력해주세요</string>
 </resources>
