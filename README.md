@@ -1,10 +1,32 @@
-# KW Library for Wear OS
+<p align="center">
+<img width="16%" src="https://user-images.githubusercontent.com/72238126/226956336-6e23b21d-88de-4e97-a6c7-3e0f3f0c3294.png"/>
+<h1 align="center">KW Library for Wear OS</h1>
+</p>
 
-//TODO
+KW Library for Wear OS는 [광운대학교 중앙도서관 앱](https://play.google.com/store/apps/details?id=idoit.slpck.kwangwoon)의 중앙도서관 모바일 이용증 기능을 안드로이드 기반 웨어러블 디바이스에서 이용할 수 있도록 돕는 **웨어러블 전용 애플리케이션**입니다.
 
 <br>
 
-# Screenshot
+# Tech & Libraries
+
+- MVVM Pattern
+- 100% [Kotlin](https://kotlinlang.org/) based with [Compose for Wear OS](https://developer.android.com/training/wearables/compose?hl=ko)
+- Coroutines for asynchronous
+- [Dagger Hilt](https://dagger.dev/hilt/) for dependency injection
+- [Retrofit](https://square.github.io/retrofit/) with [okhttp](https://square.github.io/okhttp/) for networking
+- [Tikxml](https://github.com/Tickaroo/tikxml) for parsing xml response
+- [DataStore](https://developer.android.com/topic/libraries/architecture/datastore?hl=ko) for local storage
+- [Coil](https://coil-kt.github.io/coil/) and [zxing-android-embedded](https://github.com/journeyapps/zxing-android-embedded) for displaying QR Code
+
+<br>
+
+# References
+
+본 서비스의 광운대학교 중앙도서관 관련 기능 로직은 [KWU-library-QR-PoC](https://github.com/mirusu400/KWU-library-QR-PoC)를 참고하여 개발되었습니다.
+
+<br>
+
+# Screenshots
 
 <p>
 <img width="16%" src="https://user-images.githubusercontent.com/72238126/226936347-fdec7ebc-51ca-45de-a6f0-2159897e8c71.png"/>
