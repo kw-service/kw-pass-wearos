@@ -1,5 +1,6 @@
 package dev.yjyoon.kwlibrarywearos.data.repository
 
+import dev.yjyoon.kwlibrarywearos.data.exception.FailedToSignInException
 import dev.yjyoon.kwlibrarywearos.data.source.ApiService
 import dev.yjyoon.kwlibrarywearos.data.util.EncryptionUtil.encode
 import dev.yjyoon.kwlibrarywearos.data.util.EncryptionUtil.encrypt
@@ -21,10 +22,11 @@ class RemoteRepository @Inject constructor(
             telNo = user.phone,
             passWd = user.password.encrypt(secretKey)
         ).item.authKey
-        apiService.getQrCode(
+        val qrCode = apiService.getQrCode(
             realId = realId,
             authKey = authKey,
             newCheck = "Y"
         ).item.qrCode
+        qrCode.ifBlank { throw FailedToSignInException }
     }
 }
