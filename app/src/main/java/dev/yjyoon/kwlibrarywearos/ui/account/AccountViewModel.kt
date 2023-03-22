@@ -11,7 +11,7 @@ import javax.inject.Inject
 @HiltViewModel
 class AccountViewModel @Inject constructor() : ViewModel() {
 
-    val _uiState = MutableStateFlow(AccountUiState())
+    private val _uiState = MutableStateFlow(AccountUiState())
     val uiState: StateFlow<AccountUiState> = _uiState
 
     fun setId(id: String) = _uiState.update { it.copy(id = id.trim()) }
