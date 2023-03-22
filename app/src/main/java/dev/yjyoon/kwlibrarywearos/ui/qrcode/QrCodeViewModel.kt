@@ -1,6 +1,5 @@
 package dev.yjyoon.kwlibrarywearos.ui.qrcode
 
-import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -26,7 +25,12 @@ class QrCodeViewModel @Inject constructor(
     val uiState: StateFlow<QrCodeUiState> = _uiState
 
     init {
+        refresh()
+    }
+
+    fun refresh() {
         viewModelScope.launch {
+            _uiState.value = QrCodeUiState.Loading
             remoteRepository.getQrCode(user)
                 .onSuccess {
                     _uiState.value = QrCodeUiState.Success(it)
@@ -34,7 +38,6 @@ class QrCodeViewModel @Inject constructor(
                 }
                 .onFailure {
                     _uiState.value = QrCodeUiState.Failure(it)
-                    Log.e("network error", it.stackTraceToString())
                 }
         }
     }
