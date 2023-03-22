@@ -1,6 +1,14 @@
 <p align="center">
 <img width="16%" src="https://user-images.githubusercontent.com/72238126/226956336-6e23b21d-88de-4e97-a6c7-3e0f3f0c3294.png"/>
+</p>
+
 <h1 align="center">KW Library for Wear OS</h1>
+
+<p align="center">
+<img src="https://img.shields.io/badge/kotlin-1.8.10-A97BFF.svg"/>
+<img src="https://img.shields.io/badge/jetpack-compose-5675DF.svg"/>
+<img src="https://img.shields.io/badge/for-wearable-32A579.svg"/>
+<img src="https://img.shields.io/badge/license-GPL3.0-brightgreen.svg"/>
 </p>
 
 KW Library for Wear OS는 [광운대학교 중앙도서관 앱](https://play.google.com/store/apps/details?id=idoit.slpck.kwangwoon)의 중앙도서관 모바일 이용증 기능을 안드로이드 기반 웨어러블 디바이스에서 이용할 수 있도록 돕는 **웨어러블 전용 애플리케이션**입니다.
