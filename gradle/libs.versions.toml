@@ -49,6 +49,7 @@ wear-compose-navigation = { module = "androidx.wear.compose:compose-navigation",
 wear-input = { module = "androidx.wear:wear-input", version.ref = "wear-input" }
 
 squareup-okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+squareup-okhttp-urlconnection = { module = "com.squareup.okhttp3:okhttp-urlconnection", version.ref = "okhttp" }
 squareup-okhttp-logging = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
 squareup-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 squareup-retrofit-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }

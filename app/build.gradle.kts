@@ -76,6 +76,7 @@ dependencies {
     implementation(libs.wear.input)
 
     implementation(libs.squareup.okhttp)
+    implementation(libs.squareup.okhttp.urlconnection)
     implementation(libs.squareup.okhttp.logging)
     implementation(libs.squareup.retrofit)
     implementation(libs.squareup.retrofit.gson)
