@@ -15,6 +15,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.wear.compose.material.CompactButton
 import androidx.wear.compose.material.Icon
+import androidx.wear.compose.material.Scaffold
+import androidx.wear.compose.material.TimeText
 import com.google.android.horologist.compose.layout.fillMaxRectangle
 import dev.yjyoon.kwlibrarywearos.ui.util.QrCodeUtil.convertToQrCode
 
@@ -23,23 +25,25 @@ fun QrCodeContent(
     qrcode: String,
     onSetting: () -> Unit
 ) {
-    Box(
-        modifier = Modifier.fillMaxSize()
-    ) {
-        Image(
-            bitmap = qrcode.convertToQrCode().asImageBitmap(),
-            contentDescription = null,
-            contentScale = ContentScale.Fit,
-            modifier = Modifier
-                .align(Alignment.Center)
-                .fillMaxRectangle()
-                .clip(RoundedCornerShape(4.dp))
-        )
-        CompactButton(
-            onClick = onSetting,
-            modifier = Modifier.align(Alignment.BottomCenter)
+    Scaffold(timeText = { TimeText() }) {
+        Box(
+            modifier = Modifier.fillMaxSize()
         ) {
-            Icon(imageVector = Icons.Default.Settings, contentDescription = null)
+            Image(
+                bitmap = qrcode.convertToQrCode().asImageBitmap(),
+                contentDescription = null,
+                contentScale = ContentScale.Fit,
+                modifier = Modifier
+                    .align(Alignment.Center)
+                    .fillMaxRectangle()
+                    .clip(RoundedCornerShape(4.dp))
+            )
+            CompactButton(
+                onClick = onSetting,
+                modifier = Modifier.align(Alignment.BottomCenter)
+            ) {
+                Icon(imageVector = Icons.Default.Settings, contentDescription = null)
+            }
         }
     }
 }
