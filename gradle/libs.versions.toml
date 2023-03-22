@@ -17,7 +17,7 @@ dagger = "2.45"
 
 okhttp = "4.10.0"
 retrofit = "2.9.0"
-tikxml = "0.8.15"
+tikxml = "0.8.13"
 datastore = "1.0.0"
 
 coil = "2.2.2"
