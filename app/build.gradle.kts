@@ -75,11 +75,16 @@ dependencies {
     implementation(libs.horologist.compose.layout)
     implementation(libs.wear.input)
 
-    implementation(libs.ktor.client.android)
-    implementation(libs.ktor.serialization.json)
-    implementation(libs.ktor.content.negotiation)
-    implementation(libs.ktor.client.logging)
-    implementation(libs.logback.classic)
+    implementation(libs.squareup.okhttp)
+    implementation(libs.squareup.okhttp.urlconnection)
+    implementation(libs.squareup.okhttp.logging)
+    implementation(libs.squareup.retrofit)
+    implementation(libs.squareup.retrofit.gson)
+
+    implementation(libs.tickaroo.tikxml.core)
+    implementation(libs.tickaroo.tikxml.annotation)
+    implementation(libs.tickaroo.tikxml.retrofit)
+    kapt(libs.tickaroo.tikxml.processor)
 
     implementation(libs.coil.compose)
     implementation(libs.zxing.android.embedded)

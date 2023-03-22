@@ -111,7 +111,7 @@ fun AccountScreen(
             item {
                 KwLibraryChip(
                     type = AccountInputType.Password,
-                    input = state.password?.let { "●".repeat(it.length) },
+                    input = "●".repeat(state.password.length),
                     onClick = { launcher.launch(it) },
                     modifier = Modifier.fillMaxWidth()
                 )

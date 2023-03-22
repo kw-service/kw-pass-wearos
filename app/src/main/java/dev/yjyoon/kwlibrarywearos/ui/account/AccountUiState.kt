@@ -1,9 +1,9 @@
 package dev.yjyoon.kwlibrarywearos.ui.account
 
 data class AccountUiState(
-    val id: String? = null,
-    val password: String? = null,
-    val phone: String? = null
+    val id: String = "",
+    val password: String = "",
+    val phone: String = ""
 ) {
-    val filled = id != null && password != null && phone != null
+    val filled = id.isNotBlank() && password.isNotBlank() && phone.isNotBlank()
 }
