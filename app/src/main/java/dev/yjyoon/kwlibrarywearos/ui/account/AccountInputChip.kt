@@ -24,10 +24,10 @@ import dev.yjyoon.kwlibrarywearos.ui.theme.White87
 fun KwLibraryChip(
     modifier: Modifier = Modifier,
     type: AccountInputType,
-    input: String?,
+    input: String,
     onClick: (Intent) -> Unit
 ) {
-    val isValidate = input != null
+    val isActivated = input.isNotBlank()
 
     val intent: Intent = RemoteInputIntentHelper.createActionRemoteInputIntent()
     val remoteInputs: List<RemoteInput> = listOf(
@@ -43,7 +43,7 @@ fun KwLibraryChip(
 
     Chip(
         label = { Text(stringResource(id = type.stringResId)) },
-        secondaryLabel = { Text(input ?: stringResource(id = R.string.unspecified)) },
+        secondaryLabel = { Text(input.ifBlank { stringResource(id = R.string.unspecified) }) },
         onClick = { onClick(intent) },
         icon = {
             Icon(
@@ -52,13 +52,13 @@ fun KwLibraryChip(
             )
         },
         colors = ChipDefaults.chipColors(
-            backgroundColor = if (isValidate) Primary else Color.Transparent,
+            backgroundColor = if (isActivated) Primary else Color.Transparent,
             contentColor = White87
         ),
         border = ChipDefaults.chipBorder(
             borderStroke = BorderStroke(
-                width = if (isValidate) 0.dp else 1.dp,
-                color = if (isValidate) Color.Transparent else White87
+                width = if (isActivated) 0.dp else 1.dp,
+                color = if (isActivated) Color.Transparent else White87
             )
         ),
         modifier = modifier
