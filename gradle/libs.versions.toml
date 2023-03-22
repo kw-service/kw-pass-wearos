@@ -56,7 +56,7 @@ squareup-retrofit-gson = { module = "com.squareup.retrofit2:converter-gson", ver
 tickaroo-tikxml-core = { module = "com.tickaroo.tikxml:core", version.ref = "tikxml" }
 tickaroo-tikxml-annotation = { module = "com.tickaroo.tikxml:annotation", version.ref = "tikxml" }
 tickaroo-tikxml-processor = { module = "com.tickaroo.tikxml:processor", version.ref = "tikxml" }
-tickaroo-tikxml-retrofit-converter = { module = "com.tickaroo.tikxml:retrofit-converter", version.ref = "tikxml" }
+tickaroo-tikxml-retrofit = { module = "com.tickaroo.tikxml:retrofit-converter", version.ref = "tikxml" }
 
 google-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "dagger" }
 google-hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "dagger" }
