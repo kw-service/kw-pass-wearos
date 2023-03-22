@@ -18,6 +18,7 @@ import androidx.wear.compose.material.Icon
 import androidx.wear.compose.material.Scaffold
 import androidx.wear.compose.material.TimeText
 import com.google.android.horologist.compose.layout.fillMaxRectangle
+import dev.yjyoon.kwlibrarywearos.ui.component.ForceBrightness
 import dev.yjyoon.kwlibrarywearos.ui.util.QrCodeUtil.convertToQrCode
 
 @Composable
@@ -25,6 +26,7 @@ fun QrCodeContent(
     qrcode: String,
     onSetting: () -> Unit
 ) {
+    ForceBrightness(1f)
     Scaffold(timeText = { TimeText() }) {
         Box(
             modifier = Modifier.fillMaxSize()
