@@ -18,7 +18,6 @@ import okhttp3.JavaNetCookieJar
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import java.net.CookieManager
 import javax.inject.Named
 import javax.inject.Singleton
@@ -55,7 +54,6 @@ internal object DataModule {
         return Retrofit.Builder()
             .baseUrl(baseUrl)
             .client(okhttpClient)
-            .addConverterFactory(GsonConverterFactory.create())
             .addConverterFactory(TikXmlConverterFactory.create(xmlParser))
             .build()
     }

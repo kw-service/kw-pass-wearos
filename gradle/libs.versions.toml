@@ -18,6 +18,7 @@ dagger = "2.45"
 okhttp = "4.10.0"
 retrofit = "2.9.0"
 tikxml = "0.8.13"
+
 datastore = "1.0.0"
 
 coil = "2.2.2"
@@ -52,7 +53,6 @@ squareup-okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhtt
 squareup-okhttp-urlconnection = { module = "com.squareup.okhttp3:okhttp-urlconnection", version.ref = "okhttp" }
 squareup-okhttp-logging = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
 squareup-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
-squareup-retrofit-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 
 tickaroo-tikxml-core = { module = "com.tickaroo.tikxml:core", version.ref = "tikxml" }
 tickaroo-tikxml-annotation = { module = "com.tickaroo.tikxml:annotation", version.ref = "tikxml" }
