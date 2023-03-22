@@ -21,5 +21,5 @@ object EncryptionUtil {
         return String(encodedByte)
     }
 
-    fun String.encode(): String = Base64.encodeToString(this.toByteArray(), Base64.DEFAULT)
+    fun String.encode(): String = Base64.encodeToString(this.toByteArray(), Base64.NO_WRAP)
 }
