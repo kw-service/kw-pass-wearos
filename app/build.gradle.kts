@@ -79,7 +79,6 @@ dependencies {
     implementation(libs.squareup.okhttp.urlconnection)
     implementation(libs.squareup.okhttp.logging)
     implementation(libs.squareup.retrofit)
-    implementation(libs.squareup.retrofit.gson)
 
     implementation(libs.tickaroo.tikxml.core)
     implementation(libs.tickaroo.tikxml.annotation)

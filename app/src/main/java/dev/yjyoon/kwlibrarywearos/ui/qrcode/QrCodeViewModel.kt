@@ -5,6 +5,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dev.yjyoon.kwlibrarywearos.data.repository.LocalRepository
 import dev.yjyoon.kwlibrarywearos.data.repository.RemoteRepository
 import dev.yjyoon.kwlibrarywearos.ui.model.User
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -15,7 +16,8 @@ import javax.inject.Inject
 @HiltViewModel
 class QrCodeViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
-    private val remoteRepository: RemoteRepository
+    private val remoteRepository: RemoteRepository,
+    private val localRepository: LocalRepository
 ) : ViewModel() {
 
     private val user: User = savedStateHandle.get<User>(EXTRA_KEY_USER)!!
@@ -26,7 +28,10 @@ class QrCodeViewModel @Inject constructor(
     init {
         viewModelScope.launch {
             remoteRepository.getQrCode(user)
-                .onSuccess { _uiState.value = QrCodeUiState.Success(it) }
+                .onSuccess {
+                    _uiState.value = QrCodeUiState.Success(it)
+                    if (user.autoSignedIn.not()) localRepository.setUserData(user)
+                }
                 .onFailure {
                     _uiState.value = QrCodeUiState.Failure(it)
                     Log.e("network error", it.stackTraceToString())
