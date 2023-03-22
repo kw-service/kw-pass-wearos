@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Error
+import androidx.compose.material.icons.filled.NavigateNext
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.WifiOff
 import androidx.compose.runtime.Composable
@@ -20,6 +22,7 @@ import androidx.wear.compose.material.CompactButton
 import androidx.wear.compose.material.Icon
 import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
+import androidx.wear.compose.material.dialog.Alert
 import dev.yjyoon.kwlibrarywearos.R
 import dev.yjyoon.kwlibrarywearos.data.exception.FailedToSignInException
 import dev.yjyoon.kwlibrarywearos.ui.component.LoadingComponent
@@ -45,11 +48,30 @@ fun QrCodeScreen(
         is QrCodeUiState.Failure -> {
             when ((state as QrCodeUiState.Failure).exception) {
                 FailedToSignInException -> {
-                    
+                    FailureAlert(onNext = navigateToAccount)
                 }
                 else -> {
                     NetworkError(onFresh = viewModel::refresh)
                 }
+            }
+        }
+    }
+}
+
+@Composable
+fun FailureAlert(
+    onNext: () -> Unit
+) {
+    Alert(
+        title = { Text(text = stringResource(id = R.string.signin_error)) },
+        icon = { Icon(imageVector = Icons.Default.Error, contentDescription = null) },
+        message = {
+            Text(text = stringResource(id = R.string.input_again))
+        }
+    ) {
+        item {
+            CompactButton(onClick = onNext) {
+                Icon(imageVector = Icons.Default.NavigateNext, contentDescription = null)
             }
         }
     }
