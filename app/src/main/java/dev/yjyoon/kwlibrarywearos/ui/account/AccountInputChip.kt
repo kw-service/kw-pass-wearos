@@ -1,4 +1,4 @@
-package dev.yjyoon.kwlibrarywearos.ui.component
+package dev.yjyoon.kwlibrarywearos.ui.account
 
 import android.app.RemoteInput
 import android.content.Intent
@@ -16,12 +16,11 @@ import androidx.wear.compose.material.Text
 import androidx.wear.input.RemoteInputIntentHelper
 import androidx.wear.input.wearableExtender
 import dev.yjyoon.kwlibrarywearos.R
-import dev.yjyoon.kwlibrarywearos.ui.account.AccountInputType
 import dev.yjyoon.kwlibrarywearos.ui.theme.Primary
 import dev.yjyoon.kwlibrarywearos.ui.theme.White87
 
 @Composable
-fun KwLibraryChip(
+fun AccountInputChip(
     modifier: Modifier = Modifier,
     type: AccountInputType,
     input: String,

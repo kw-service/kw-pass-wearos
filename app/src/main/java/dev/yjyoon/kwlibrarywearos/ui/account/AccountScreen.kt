@@ -38,7 +38,6 @@ import androidx.wear.compose.material.VignettePosition
 import com.google.android.horologist.compose.navscaffold.ExperimentalHorologistComposeLayoutApi
 import com.google.android.horologist.compose.rotaryinput.rotaryWithScroll
 import dev.yjyoon.kwlibrarywearos.R
-import dev.yjyoon.kwlibrarywearos.ui.component.KwLibraryChip
 import dev.yjyoon.kwlibrarywearos.ui.model.User
 import dev.yjyoon.kwlibrarywearos.ui.theme.Primary
 import dev.yjyoon.kwlibrarywearos.ui.theme.White87
@@ -101,7 +100,7 @@ fun AccountScreen(
                 )
             }
             item {
-                KwLibraryChip(
+                AccountInputChip(
                     type = AccountInputType.Id,
                     input = state.id,
                     onClick = { launcher.launch(it) },
@@ -109,7 +108,7 @@ fun AccountScreen(
                 )
             }
             item {
-                KwLibraryChip(
+                AccountInputChip(
                     type = AccountInputType.Password,
                     input = "●".repeat(state.password.length),
                     onClick = { launcher.launch(it) },
@@ -117,7 +116,7 @@ fun AccountScreen(
                 )
             }
             item {
-                KwLibraryChip(
+                AccountInputChip(
                     type = AccountInputType.Phone,
                     input = state.phone,
                     onClick = { launcher.launch(it) },
