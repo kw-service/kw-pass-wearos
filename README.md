@@ -21,6 +21,7 @@ KW Library for Wear OS는 [광운대학교 중앙도서관 앱](https://play.goo
 - 100% [Kotlin](https://kotlinlang.org/) based with [Compose for Wear OS](https://developer.android.com/training/wearables/compose?hl=ko)
 - Coroutines for asynchronous
 - [Dagger Hilt](https://dagger.dev/hilt/) for dependency injection
+- [Horologist](https://github.com/google/horologist) for supplement of Wear OS features
 - [Retrofit](https://square.github.io/retrofit/) with [okhttp](https://square.github.io/okhttp/) for networking
 - [Tikxml](https://github.com/Tickaroo/tikxml) for parsing xml response
 - [DataStore](https://developer.android.com/topic/libraries/architecture/datastore?hl=ko) for local storage
