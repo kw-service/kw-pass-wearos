@@ -1,0 +1,72 @@
+[versions]
+android-gradle-plugin = "7.4.2"
+org-jetbrains-kotlin = "1.8.10"
+
+androidx-activity = "1.6.1"
+androidx-lifecycle = "2.6.0"
+androidx-splashscreen = "1.0.0"
+
+compose = "1.4.0-rc01"
+compose-compiler = "1.4.3"
+
+wear-compose = "1.2.0-alpha05"
+wear-input = "1.2.0-alpha02"
+horologist = "0.3.9"
+
+dagger = "2.45"
+
+okhttp = "4.10.0"
+retrofit = "2.9.0"
+tikxml = "0.8.13"
+
+datastore = "1.0.0"
+
+coil = "2.2.2"
+qrcode = "4.3.0"
+
+[libraries]
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "org-jetbrains-kotlin" }
+
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
+androidx-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle" }
+androidx-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
+
+androidx-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "androidx-splashscreen" }
+androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore" }
+
+compose-compiler = { module = "androidx.compose.compiler:compiler", version.ref = "compose-compiler" }
+compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
+compose-material-iconscore = { module = "androidx.compose.material:material-icons-core", version.ref = "compose" }
+compose-material-iconsext = { module = "androidx.compose.material:material-icons-extended", version.ref = "compose" }
+compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
+
+horologist-composables = { module = "com.google.android.horologist:horologist-composables", version.ref = "horologist" }
+horologist-compose-layout = { module = "com.google.android.horologist:horologist-compose-layout", version.ref = "horologist" }
+
+wear-compose-foundation = { module = "androidx.wear.compose:compose-foundation", version.ref = "wear-compose" }
+wear-compose-material = { module = "androidx.wear.compose:compose-material", version.ref = "wear-compose" }
+wear-compose-navigation = { module = "androidx.wear.compose:compose-navigation", version.ref = "wear-compose" }
+wear-input = { module = "androidx.wear:wear-input", version.ref = "wear-input" }
+
+squareup-okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+squareup-okhttp-urlconnection = { module = "com.squareup.okhttp3:okhttp-urlconnection", version.ref = "okhttp" }
+squareup-okhttp-logging = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
+squareup-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+
+tickaroo-tikxml-core = { module = "com.tickaroo.tikxml:core", version.ref = "tikxml" }
+tickaroo-tikxml-annotation = { module = "com.tickaroo.tikxml:annotation", version.ref = "tikxml" }
+tickaroo-tikxml-processor = { module = "com.tickaroo.tikxml:processor", version.ref = "tikxml" }
+tickaroo-tikxml-retrofit = { module = "com.tickaroo.tikxml:retrofit-converter", version.ref = "tikxml" }
+
+google-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "dagger" }
+google-hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "dagger" }
+javax-inject = "javax.inject:javax.inject:1"
+
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+zxing-android-embedded = { module = "com.journeyapps:zxing-android-embedded", version.ref = "qrcode" }
+
+[plugins]
+com-android-application = { id = "com.android.application", version.ref = "android-gradle-plugin" }
+org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin" }
+com-google-hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "dagger" }

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">KW 도서관</string>
+
+    <string name="input_account">계정 정보 입력</string>
+
+    <string name="id">학번</string>
+    <string name="password">비밀번호</string>
+    <string name="phone_number">전화번호</string>
+
+    <string name="unspecified">미입력</string>
+
+    <string name="check_account">계정 정보 확인 중...</string>
+    <string name="load_qrcode">QR Code 로딩 중...</string>
+
+    <string name="network_error">네트워크 오류</string>
+    <string name="check_network">연결 상태를 확인해주세요</string>
+
+    <string name="signin_error">로그인 오류</string>
+    <string name="input_again">다시 입력해주세요</string>
+</resources>
