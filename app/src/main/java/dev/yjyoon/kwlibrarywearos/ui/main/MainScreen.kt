@@ -25,8 +25,5 @@ fun MainScreen(
         MainUiState.Loading -> {
             LoadingComponent(textRes = R.string.check_account)
         }
-        is MainUiState.Failure -> {
-            //TODO
-        }
     }
 }
