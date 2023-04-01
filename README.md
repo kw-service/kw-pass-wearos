@@ -18,6 +18,7 @@ KW Library for Wear OS는 [광운대학교 중앙도서관 앱](https://play.goo
 # Tech & Libraries
 
 - MVVM Pattern
+- Kotlin DSL & Version Catalog for Gradle
 - 100% [Kotlin](https://kotlinlang.org/) based with [Compose for Wear OS](https://developer.android.com/training/wearables/compose?hl=ko)
 - Coroutines for asynchronous
 - [Dagger Hilt](https://dagger.dev/hilt/) for dependency injection
