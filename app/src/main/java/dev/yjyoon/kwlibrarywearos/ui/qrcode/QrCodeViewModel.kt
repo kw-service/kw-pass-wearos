@@ -19,7 +19,7 @@ class QrCodeViewModel @Inject constructor(
     private val localRepository: LocalRepository
 ) : ViewModel() {
 
-    private val user: User = savedStateHandle.get<User>(EXTRA_KEY_USER)!!
+    private val user: User = requireNotNull(savedStateHandle.get<User>(EXTRA_KEY_USER))
 
     private val _uiState = MutableStateFlow<QrCodeUiState>(QrCodeUiState.Loading)
     val uiState: StateFlow<QrCodeUiState> = _uiState

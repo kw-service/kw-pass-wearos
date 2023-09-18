@@ -20,11 +20,25 @@ fun QrCodeScreen(
 ) {
     val state by viewModel.uiState.collectAsState()
 
-    when (state) {
+    QrCodeScreen(
+        uiState = state,
+        navigateToAccount = navigateToAccount,
+        refreshQrCode = viewModel::refresh
+    )
+}
+
+@Composable
+fun QrCodeScreen(
+    uiState: QrCodeUiState,
+    navigateToAccount: () -> Unit,
+    refreshQrCode: () -> Unit
+) {
+
+    when (uiState) {
         is QrCodeUiState.Success -> {
             QrCodeContent(
-                qrcode = (state as QrCodeUiState.Success).qrcode,
-                onRefresh = viewModel::refresh,
+                qrcode = uiState.qrcode,
+                onRefresh = refreshQrCode,
                 onSetting = navigateToAccount
             )
         }
@@ -34,7 +48,7 @@ fun QrCodeScreen(
         }
 
         is QrCodeUiState.Failure -> {
-            when ((state as QrCodeUiState.Failure).exception) {
+            when (uiState.exception) {
                 FailedToSignInException -> {
                     AlertComponent(
                         titleRes = R.string.signin_error,
@@ -51,7 +65,7 @@ fun QrCodeScreen(
                         icon = Icons.Default.WifiOff,
                         messageRes = R.string.check_network,
                         actionIcon = Icons.Default.Refresh,
-                        onAction = viewModel::refresh
+                        onAction = refreshQrCode
                     )
                 }
             }
