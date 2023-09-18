@@ -54,35 +54,13 @@ android {
 }
 
 dependencies {
+    implementation(libs.bundles.androidx)
+    implementation(libs.bundles.compose)
+    implementation(libs.bundles.wear)
+    implementation(libs.bundles.horologist)
+    implementation(libs.bundles.retrofit)
 
-    implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.viewmodel.ktx)
-    implementation(libs.androidx.viewmodel.compose)
-
-    implementation(libs.androidx.splashscreen)
-    implementation(libs.androidx.datastore.preferences)
-
-    implementation(libs.compose.foundation)
-    implementation(libs.compose.ui.tooling.preview)
-    implementation(libs.compose.material.iconscore)
-    implementation(libs.compose.material.iconsext)
-
-    implementation(libs.wear.compose.material)
-    implementation(libs.wear.compose.foundation)
-    implementation(libs.wear.compose.navigation)
-
-    implementation(libs.horologist.composables)
-    implementation(libs.horologist.compose.layout)
-    implementation(libs.wear.input)
-
-    implementation(libs.squareup.okhttp)
-    implementation(libs.squareup.okhttp.urlconnection)
-    implementation(libs.squareup.okhttp.logging)
-    implementation(libs.squareup.retrofit)
-
-    implementation(libs.tickaroo.tikxml.core)
-    implementation(libs.tickaroo.tikxml.annotation)
-    implementation(libs.tickaroo.tikxml.retrofit)
+    implementation(libs.bundles.tikxml)
     kapt(libs.tickaroo.tikxml.processor)
 
     implementation(libs.coil.compose)
