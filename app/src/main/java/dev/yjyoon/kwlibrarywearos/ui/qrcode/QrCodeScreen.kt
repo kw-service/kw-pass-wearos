@@ -24,12 +24,15 @@ fun QrCodeScreen(
         is QrCodeUiState.Success -> {
             QrCodeContent(
                 qrcode = (state as QrCodeUiState.Success).qrcode,
+                onRefresh = viewModel::refresh,
                 onSetting = navigateToAccount
             )
         }
+
         QrCodeUiState.Loading -> {
             LoadingComponent(textRes = R.string.load_qrcode)
         }
+
         is QrCodeUiState.Failure -> {
             when ((state as QrCodeUiState.Failure).exception) {
                 FailedToSignInException -> {
@@ -41,6 +44,7 @@ fun QrCodeScreen(
                         onAction = navigateToAccount
                     )
                 }
+
                 else -> {
                     AlertComponent(
                         titleRes = R.string.network_error,

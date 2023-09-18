@@ -1,6 +1,7 @@
 package dev.yjyoon.kwlibrarywearos.ui.qrcode
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -24,6 +25,7 @@ import dev.yjyoon.kwlibrarywearos.ui.util.QrCodeUtil.convertToQrCode
 @Composable
 fun QrCodeContent(
     qrcode: String,
+    onRefresh: () -> Unit,
     onSetting: () -> Unit
 ) {
     ForceBrightness(1f)
@@ -39,6 +41,7 @@ fun QrCodeContent(
                     .align(Alignment.Center)
                     .fillMaxRectangle()
                     .clip(RoundedCornerShape(4.dp))
+                    .clickable(onClick = onRefresh)
             )
             CompactButton(
                 onClick = onSetting,
