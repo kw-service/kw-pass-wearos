@@ -10,21 +10,25 @@ import dev.yjyoon.kwlibrarywearos.R
 
 enum class AccountInputType(
     @StringRes val stringResId: Int,
+    @StringRes val hintResId: Int,
     val icon: ImageVector,
     val inputKey: String
 ) {
     Id(
         stringResId = R.string.id,
+        hintResId = R.string.id_hint,
         icon = Icons.Outlined.Badge,
         inputKey = INPUT_KEY_ID
     ),
     Password(
         stringResId = R.string.password,
+        hintResId = R.string.password_hint,
         icon = Icons.Outlined.Password,
         inputKey = INPUT_KEY_PW
     ),
     Phone(
         stringResId = R.string.phone_number,
+        hintResId = R.string.phone_number_hint,
         icon = Icons.Outlined.Smartphone,
         inputKey = INPUT_KEY_PHONE
     )
