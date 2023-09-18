@@ -35,14 +35,14 @@ import androidx.wear.compose.material.Text
 import androidx.wear.compose.material.TimeText
 import androidx.wear.compose.material.Vignette
 import androidx.wear.compose.material.VignettePosition
-import com.google.android.horologist.compose.navscaffold.ExperimentalHorologistComposeLayoutApi
+import com.google.android.horologist.annotations.ExperimentalHorologistApi
 import com.google.android.horologist.compose.rotaryinput.rotaryWithScroll
 import dev.yjyoon.kwlibrarywearos.R
 import dev.yjyoon.kwlibrarywearos.ui.model.User
 import dev.yjyoon.kwlibrarywearos.ui.theme.Primary
 import dev.yjyoon.kwlibrarywearos.ui.theme.White87
 
-@OptIn(ExperimentalHorologistComposeLayoutApi::class)
+@OptIn(ExperimentalHorologistApi::class)
 @Composable
 fun AccountScreen(
     viewModel: AccountViewModel,
@@ -87,7 +87,10 @@ fun AccountScreen(
         ScalingLazyColumn(
             modifier = Modifier
                 .fillMaxSize()
-                .rotaryWithScroll(focusRequester, listState),
+                .rotaryWithScroll(
+                    focusRequester = focusRequester,
+                    scrollableState = listState
+                ),
             state = listState,
             autoCentering = AutoCenteringParams(0),
             verticalArrangement = Arrangement.spacedBy(4.dp)
