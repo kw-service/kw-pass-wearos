@@ -3,7 +3,7 @@ package dev.yjyoon.kwlibrarywearos.ui.main
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dev.yjyoon.kwlibrarywearos.data.repository.LocalRepository
+import dev.yjyoon.kwlibrarywearos.ui.repository.LocalRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

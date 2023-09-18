@@ -5,13 +5,14 @@ import dev.yjyoon.kwlibrarywearos.data.source.ApiService
 import dev.yjyoon.kwlibrarywearos.data.util.EncryptionUtil.encode
 import dev.yjyoon.kwlibrarywearos.data.util.EncryptionUtil.encrypt
 import dev.yjyoon.kwlibrarywearos.ui.model.User
+import dev.yjyoon.kwlibrarywearos.ui.repository.RemoteRepository
 import javax.inject.Inject
 
-class RemoteRepository @Inject constructor(
+class RemoteRepositoryImpl @Inject constructor(
     private val apiService: ApiService
-) {
+) : RemoteRepository {
 
-    suspend fun getQrCode(user: User): Result<String> = runCatching {
+    override suspend fun getQrCode(user: User): Result<String> = runCatching {
         val rid = user.id.encode()
         val realId = "0${user.id}".encode()
         val secretKey = apiService.getSecretKey(userId = realId).item.secKey
@@ -27,6 +28,7 @@ class RemoteRepository @Inject constructor(
             authKey = authKey,
             newCheck = "Y"
         ).item.qrCode
+
         qrCode.ifBlank { throw FailedToSignInException }
     }
 }
