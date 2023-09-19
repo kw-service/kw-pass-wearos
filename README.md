@@ -2,7 +2,7 @@
 <img width="16%" src="https://user-images.githubusercontent.com/72238126/226956336-6e23b21d-88de-4e97-a6c7-3e0f3f0c3294.png"/>
 </p>
 
-<h1 align="center">KW Library for Wear OS</h1>
+<h1 align="center">KW Pass for Wear OS</h1>
 
 <p align="center">
 <img src="https://img.shields.io/badge/kotlin-1.9.10-A97BFF.svg"/>
