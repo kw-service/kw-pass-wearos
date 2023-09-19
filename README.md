@@ -5,7 +5,7 @@
 <h1 align="center">KW Library for Wear OS</h1>
 
 <p align="center">
-<img src="https://img.shields.io/badge/kotlin-1.8.10-A97BFF.svg"/>
+<img src="https://img.shields.io/badge/kotlin-1.9.10-A97BFF.svg"/>
 <img src="https://img.shields.io/badge/jetpack-compose-5675DF.svg"/>
 <img src="https://img.shields.io/badge/for-wearable-32A579.svg"/>
 <img src="https://img.shields.io/badge/license-GPL3.0-brightgreen.svg"/>
