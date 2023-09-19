@@ -15,7 +15,6 @@ import androidx.wear.compose.material.Icon
 import androidx.wear.compose.material.Text
 import androidx.wear.input.RemoteInputIntentHelper
 import androidx.wear.input.wearableExtender
-import dev.yjyoon.kwlibrarywearos.R
 import dev.yjyoon.kwlibrarywearos.ui.theme.Primary
 import dev.yjyoon.kwlibrarywearos.ui.theme.White87
 
@@ -42,7 +41,7 @@ fun AccountInputChip(
 
     Chip(
         label = { Text(stringResource(id = type.stringResId)) },
-        secondaryLabel = { Text(input.ifBlank { stringResource(id = R.string.unspecified) }) },
+        secondaryLabel = { Text(input.ifBlank { stringResource(id = type.hintResId) }) },
         onClick = { onClick(intent) },
         icon = {
             Icon(

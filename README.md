@@ -5,7 +5,7 @@
 <h1 align="center">KW Library for Wear OS</h1>
 
 <p align="center">
-<img src="https://img.shields.io/badge/kotlin-1.8.10-A97BFF.svg"/>
+<img src="https://img.shields.io/badge/kotlin-1.9.10-A97BFF.svg"/>
 <img src="https://img.shields.io/badge/jetpack-compose-5675DF.svg"/>
 <img src="https://img.shields.io/badge/for-wearable-32A579.svg"/>
 <img src="https://img.shields.io/badge/license-GPL3.0-brightgreen.svg"/>
@@ -18,6 +18,7 @@ KW Library for Wear OS는 [광운대학교 중앙도서관 앱](https://play.goo
 # Tech & Libraries
 
 - MVVM Pattern
+- Kotlin DSL & Version Catalog for Gradle
 - 100% [Kotlin](https://kotlinlang.org/) based with [Compose for Wear OS](https://developer.android.com/training/wearables/compose?hl=ko)
 - Coroutines for asynchronous
 - [Dagger Hilt](https://dagger.dev/hilt/) for dependency injection
@@ -45,3 +46,9 @@ KW Library for Wear OS는 [광운대학교 중앙도서관 앱](https://play.goo
 <img width="16%" src="https://user-images.githubusercontent.com/72238126/226938794-5b2832be-651b-4243-98c0-cedff1c49133.png"/>
 <img width="16%" src="https://user-images.githubusercontent.com/72238126/226939040-a6ad1ef5-2d13-41da-a029-1a7ab225412e.png"/>
 </p>
+
+<br>
+
+# Release
+
+<a href='https://play.google.com/store/apps/details?id=dev.yjyoon.kwlibrarywearos&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img width="20%" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
