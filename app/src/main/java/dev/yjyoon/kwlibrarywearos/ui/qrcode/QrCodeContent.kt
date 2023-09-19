@@ -18,6 +18,7 @@ import androidx.wear.compose.material.CompactButton
 import androidx.wear.compose.material.Icon
 import androidx.wear.compose.material.Scaffold
 import androidx.wear.compose.material.TimeText
+import com.google.android.horologist.compose.ambient.AmbientState
 import com.google.android.horologist.compose.layout.fillMaxRectangle
 import dev.yjyoon.kwlibrarywearos.ui.component.ForceBrightness
 import dev.yjyoon.kwlibrarywearos.ui.util.QrCodeUtil.convertToQrCode
@@ -26,7 +27,8 @@ import dev.yjyoon.kwlibrarywearos.ui.util.QrCodeUtil.convertToQrCode
 fun QrCodeContent(
     qrcode: String,
     onRefresh: () -> Unit,
-    onSetting: () -> Unit
+    onSetting: () -> Unit,
+    ambientState: AmbientState
 ) {
     ForceBrightness(1f)
     Scaffold(timeText = { TimeText() }) {

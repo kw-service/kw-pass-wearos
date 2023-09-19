@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
+import com.google.android.horologist.compose.ambient.AmbientAware
 import dagger.hilt.android.AndroidEntryPoint
 import dev.yjyoon.kwlibrarywearos.ui.account.AccountActivity
 import dev.yjyoon.kwlibrarywearos.ui.model.User
@@ -20,11 +21,14 @@ class QrCodeActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            KwLibraryTheme {
-                QrCodeScreen(
-                    viewModel = viewModel,
-                    navigateToAccount = ::startAccountActivity
-                )
+            AmbientAware(isAlwaysOnScreen = true) {
+                KwLibraryTheme {
+                    QrCodeScreen(
+                        viewModel = viewModel,
+                        navigateToAccount = ::startAccountActivity,
+                        ambientStateUpdate = it
+                    )
+                }
             }
         }
     }
