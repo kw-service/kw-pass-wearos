@@ -9,6 +9,7 @@ import dev.yjyoon.kwlibrarywearos.ui.repository.LocalRepository
 import dev.yjyoon.kwlibrarywearos.ui.repository.RemoteRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -22,7 +23,7 @@ class QrCodeViewModel @Inject constructor(
     private val user: User = requireNotNull(savedStateHandle.get<User>(EXTRA_KEY_USER))
 
     private val _uiState = MutableStateFlow<QrCodeUiState>(QrCodeUiState.Loading)
-    val uiState: StateFlow<QrCodeUiState> = _uiState
+    val uiState: StateFlow<QrCodeUiState> = _uiState.asStateFlow()
 
     init {
         refresh()
