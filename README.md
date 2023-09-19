@@ -11,7 +11,7 @@
 <img src="https://img.shields.io/badge/license-GPL3.0-brightgreen.svg"/>
 </p>
 
-KW Library for Wear OS는 [광운대학교 중앙도서관 앱](https://play.google.com/store/apps/details?id=idoit.slpck.kwangwoon)의 중앙도서관 모바일 이용증 기능을 안드로이드 기반 웨어러블 디바이스에서 이용할 수 있도록 돕는 **웨어러블 전용 애플리케이션**입니다.
+KW Pass for Wear OS는 [광운대학교 중앙도서관 앱](https://play.google.com/store/apps/details?id=idoit.slpck.kwangwoon)의 중앙도서관 모바일 이용증 기능을 안드로이드 기반 웨어러블 디바이스에서 이용할 수 있도록 돕는 **웨어러블 전용 애플리케이션**입니다.
 
 <br>
 
@@ -32,7 +32,7 @@ KW Library for Wear OS는 [광운대학교 중앙도서관 앱](https://play.goo
 
 # References
 
-본 서비스의 광운대학교 중앙도서관 관련 기능 로직은 [KWU-library-QR-PoC](https://github.com/mirusu400/KWU-library-QR-PoC)를 참고하여 개발되었습니다.
+본 서비스의 광운대학교 중앙도서관 출입 관련 기능 로직은 [KWU-library-QR-PoC](https://github.com/mirusu400/KWU-library-QR-PoC)를 참고하여 개발되었습니다.
 
 <br>
 
