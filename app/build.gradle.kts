@@ -12,9 +12,9 @@ android {
     defaultConfig {
         applicationId = "dev.yjyoon.kwlibrarywearos"
         minSdk = 30
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0.0"
+        targetSdk = 33
+        versionCode = 3
+        versionName = "1.1.0"
         vectorDrawables {
             useSupportLibrary = true
         }
