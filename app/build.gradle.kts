@@ -13,7 +13,7 @@ android {
         applicationId = "dev.yjyoon.kwlibrarywearos"
         minSdk = 30
         targetSdk = 33
-        versionCode = 3
+        versionCode = 4
         versionName = "1.1.0"
         vectorDrawables {
             useSupportLibrary = true
