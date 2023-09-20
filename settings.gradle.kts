@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "KW Library for Wear OS"
+rootProject.name = "KW Pass for Wear OS"
 include(":app")
