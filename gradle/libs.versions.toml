@@ -8,6 +8,7 @@ androidx-lifecycle = "2.6.2"
 compose = "1.5.1"
 compose-compiler = "1.5.3"
 
+wearable = "18.1.0"
 wear-compose = "1.2.0"
 wear-input = "1.2.0-alpha02"
 horologist = "0.5.6"
@@ -41,6 +42,7 @@ compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview"
 horologist-composables = { module = "com.google.android.horologist:horologist-composables", version.ref = "horologist" }
 horologist-compose-layout = { module = "com.google.android.horologist:horologist-compose-layout", version.ref = "horologist" }
 
+playservices-wearable = { module = "com.google.android.gms:play-services-wearable", version.ref = "wearable" }
 wear-compose-foundation = { module = "androidx.wear.compose:compose-foundation", version.ref = "wear-compose" }
 wear-compose-material = { module = "androidx.wear.compose:compose-material", version.ref = "wear-compose" }
 wear-compose-navigation = { module = "androidx.wear.compose:compose-navigation", version.ref = "wear-compose" }
@@ -90,6 +92,7 @@ horologist = [
 ]
 
 wear = [
+    "playservices-wearable",
     "wear-compose-foundation",
     "wear-compose-material",
     "wear-compose-navigation",
