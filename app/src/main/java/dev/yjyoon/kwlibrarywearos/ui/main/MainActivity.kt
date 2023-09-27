@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import dagger.hilt.android.AndroidEntryPoint
 import dev.yjyoon.kwlibrarywearos.ui.account.AccountActivity
 import dev.yjyoon.kwlibrarywearos.ui.model.User
@@ -14,8 +15,10 @@ import dev.yjyoon.kwlibrarywearos.ui.theme.KwLibraryTheme
 class MainActivity : ComponentActivity() {
 
     private val viewModel: MainViewModel by viewModels()
-    
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
+        
         super.onCreate(savedInstanceState)
 
         setContent {
