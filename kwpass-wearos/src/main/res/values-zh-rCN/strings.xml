@@ -8,4 +8,8 @@
     <string name="failed_to_get_qr">获取二维码失败。</string>
     <string name="welcome">请在手机上的 KW Pass 应用中注册帐户。</string>
     <string name="qr_seconds">%d秒</string>
+
+    <string name="complication_icon_desc_preview">KW Pass 图标快捷方式</string>
+    <string name="complication_text_preview">KW Pass</string>
+    <string name="complication_desc_preview">KW Pass 文本快捷方式</string>
 </resources>

@@ -8,4 +8,8 @@
     <string name="failed_to_get_qr">無法取得 QR Code。</string>
     <string name="welcome">請在手機的 KW Pass 應用程式中註冊帳戶。</string>
     <string name="qr_seconds">%d秒</string>
+
+    <string name="complication_icon_desc_preview">KW Pass 圖示捷徑</string>
+    <string name="complication_text_preview">KW Pass</string>
+    <string name="complication_desc_preview">KW Pass 文字捷徑</string>
 </resources>

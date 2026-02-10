@@ -8,4 +8,8 @@
     <string name="failed_to_get_qr">QR코드 요청에 실패했습니다.</string>
     <string name="welcome">휴대폰의 KW Pass 어플리케이션에서 계정 정보를 등륵해주세요.</string>
     <string name="qr_seconds">%d초</string>
+
+    <string name="complication_icon_desc_preview">KW Pass 아이콘 바로가기</string>
+    <string name="complication_text_preview">KW Pass</string>
+    <string name="complication_desc_preview">KW Pass 텍스트 바로가기</string>
 </resources>

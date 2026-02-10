@@ -8,4 +8,8 @@
     <string name="failed_to_get_qr">Failed to fetch QR code.</string>
     <string name="welcome">Please register your account in the KW Pass app on your phone.</string>
     <string name="qr_seconds">%ds</string>
+
+    <string name="complication_icon_desc_preview">KW Pass Icon Shortcut</string>
+    <string name="complication_text_preview">KW Pass</string>
+    <string name="complication_desc_preview">KW Pass Text Shortcut</string>
 </resources>

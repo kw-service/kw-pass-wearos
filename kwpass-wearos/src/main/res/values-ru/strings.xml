@@ -8,4 +8,8 @@
     <string name="failed_to_get_qr">Не удалось получить QR-код.</string>
     <string name="welcome">Пожалуйста, зарегистрируйте аккаунт в приложении KW Pass на телефоне.</string>
     <string name="qr_seconds">%dсек</string>
+
+    <string name="complication_icon_desc_preview">Ярлык значка KW Pass</string>
+    <string name="complication_text_preview">KW Pass</string>
+    <string name="complication_desc_preview">Ярлык текста KW Pass</string>
 </resources>

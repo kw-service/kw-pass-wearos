@@ -8,4 +8,8 @@
     <string name="failed_to_get_qr">Tải mã QR thất bại.</string>
     <string name="welcome">Vui lòng đăng ký tài khoản trên ứng dụng KW Pass trên điện thoại.</string>
     <string name="qr_seconds">%dgiây</string>
+
+    <string name="complication_icon_desc_preview">Lối tắt biểu tượng KW Pass</string>
+    <string name="complication_text_preview">KW Pass</string>
+    <string name="complication_desc_preview">Lối tắt văn bản KW Pass</string>
 </resources>

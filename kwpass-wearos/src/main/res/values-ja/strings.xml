@@ -8,4 +8,8 @@
     <string name="failed_to_get_qr">QRコードの取得に失敗しました。</string>
     <string name="welcome">スマホのKW Passアプリでアカウント情報を登録してください。</string>
     <string name="qr_seconds">%d秒</string>
+
+    <string name="complication_icon_desc_preview">KW Pass アイコンのショートカット</string>
+    <string name="complication_text_preview">KW Pass</string>
+    <string name="complication_desc_preview">KW Pass テキストのショートカット</string>
 </resources>

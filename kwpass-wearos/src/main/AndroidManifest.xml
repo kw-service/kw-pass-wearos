@@ -59,7 +59,7 @@
             android:name=".service.complication.TextComplicationService"
             android:exported="true"
             android:icon="@drawable/qr_icon"
-            android:label="KW Pass"
+            android:label="@string/complication_desc_preview"
             android:permission="com.google.android.wearable.permission.BIND_COMPLICATION_PROVIDER">
 
             <intent-filter>
@@ -78,7 +78,7 @@
             android:name=".service.complication.IconComplicationService"
             android:exported="true"
             android:icon="@drawable/qr_icon"
-            android:label="KW Pass (아이콘)"
+            android:label="@string/complication_icon_desc_preview"
             android:permission="com.google.android.wearable.permission.BIND_COMPLICATION_PROVIDER">
             <intent-filter>
                 <action android:name="android.support.wearable.complications.ACTION_COMPLICATION_UPDATE_REQUEST" />

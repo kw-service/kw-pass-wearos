@@ -43,7 +43,9 @@ class IconComplicationService : TextComplicationService() {
 
     override fun getPreviewData(type: ComplicationType): ComplicationData? {
         val previewIcon = Icon.createWithResource(this, R.drawable.qr_icon)
-        val previewDesc = PlainComplicationText.Builder("KW Pass (아이콘만)").build()
+        val previewDesc = PlainComplicationText.Builder(
+            getString(R.string.complication_icon_desc_preview)
+        ).build()
 
         return when (type) {
             ComplicationType.SMALL_IMAGE -> {

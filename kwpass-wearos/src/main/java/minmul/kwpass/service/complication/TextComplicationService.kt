@@ -63,8 +63,12 @@ open class TextComplicationService : SuspendingComplicationDataSourceService() {
 
     override fun getPreviewData(type: ComplicationType): ComplicationData? {
         val previewIcon = Icon.createWithResource(this, R.drawable.qr_icon)
-        val previewText = PlainComplicationText.Builder("KW Pass QR").build()
-        val previewDesc = PlainComplicationText.Builder("KW Pass QR").build()
+        val previewText = PlainComplicationText.Builder(
+            getString(R.string.complication_text_preview)
+        ).build()
+        val previewDesc = PlainComplicationText.Builder(
+            getString(R.string.complication_desc_preview)
+        ).build()
 
         return when (type) {
             ComplicationType.SHORT_TEXT -> {
