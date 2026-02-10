@@ -5,9 +5,7 @@
    Note: This file is ignored for devices older than API 31
    See https://developer.android.com/about/versions/12/backup-restore
 -->
+<!-- preferencesDataStore(name = "userInfo")로 저장되어 files/datastore/userInfo.preferences_pb에 저장됨-->
 <full-backup-content>
-    <!--
-   <include domain="sharedpref" path="."/>
-   <exclude domain="sharedpref" path="device.xml"/>
--->
+    <exclude domain="file" path="datastore/userInfo.preferences_pb"/>
 </full-backup-content>
