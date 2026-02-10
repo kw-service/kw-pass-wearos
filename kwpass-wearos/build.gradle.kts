@@ -23,8 +23,8 @@ android {
         applicationId = "minmul.kwpass"
         minSdk = 30
         targetSdk = 36
-        versionCode = 20006
-        versionName = "watch_1.1.2"
+        versionCode = 20011
+        versionName = "watch_1.2"
 
     }
 
