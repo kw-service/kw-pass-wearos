@@ -3,6 +3,7 @@ package minmul.kwpass.shared
 import android.content.Context
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -23,6 +24,7 @@ class LocalDisk @Inject constructor(
         val KEY_TEL = stringPreferencesKey("tel") // 전화번호
         val KEY_IS_FIRST_RUN = booleanPreferencesKey("is_first_run")
         val AUTH_KEY = stringPreferencesKey("")
+        val QR_SIZE = intPreferencesKey("256")
     }
 
 
@@ -58,6 +60,13 @@ class LocalDisk @Inject constructor(
         }
     }
 
+    suspend fun saveQrSize(size: Int) {
+        Timber.i("qr코드 크기 설정됨: ${size}.dp")
+        context.dataStore.edit { preferences ->
+            preferences[QR_SIZE] = size
+        }
+    }
+
     val userFlow: Flow<Triple<String, String, String>> = context.dataStore.data
         .map { preferences ->
             val encryptedRid = preferences[KEY_RID] ?: ""
@@ -74,6 +83,11 @@ class LocalDisk @Inject constructor(
     val isFirstRun: Flow<Boolean> = context.dataStore.data
         .map { preferences ->
             preferences[KEY_IS_FIRST_RUN] ?: true
+        }
+
+    val qrSize: Flow<Int> = context.dataStore.data
+        .map { preferences ->
+            preferences[QR_SIZE] ?: 256
         }
 
     suspend fun finishedInitialSetupProcessedStatus() {

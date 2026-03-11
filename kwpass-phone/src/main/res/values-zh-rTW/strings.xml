@@ -49,4 +49,10 @@
     <string name="language">語言</string>
     <string name="app_version">應用程式版本</string>
     <string name="opensource_licence">開放原始碼授權</string>
+    <string name="qrcode_size">調整 QR 碼大小</string>
+    <string name="save">儲存</string>
+    <string name="not_working_qr">這是用於檢查大小的範例 QR 碼。該 QR 碼無效。</string>
+
+    <string name="about_size">哪個大小合適？</string>
+    <string name="about_size_description">請嘗試調整 QR 碼大小以提高掃描成功率。此設定適用於 KW Pass 應用程式內及小工具的 QR 碼大小。</string>
 </resources>

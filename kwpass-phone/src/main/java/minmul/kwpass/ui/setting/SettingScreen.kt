@@ -17,6 +17,7 @@ import androidx.compose.material.icons.automirrored.filled.OpenInNew
 import androidx.compose.material.icons.filled.Android
 import androidx.compose.material.icons.filled.Code
 import androidx.compose.material.icons.filled.Language
+import androidx.compose.material.icons.filled.QrCodeScanner
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -44,7 +45,7 @@ import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import minmul.kwpass.BuildConfig
 import minmul.kwpass.R
 import minmul.kwpass.service.KwPassLanguageService
-import minmul.kwpass.service.KwPassUri
+import minmul.kwpass.service.KwPassConst
 import minmul.kwpass.ui.ScreenDestination
 import minmul.kwpass.ui.components.AccountInputFieldSet
 import minmul.kwpass.ui.components.SingleMenu
@@ -86,6 +87,7 @@ fun SettingMainScreen(
     onPasswordVisibilityChange: () -> Unit,
     onTelChange: (String) -> Unit,
     onSave: () -> Unit,
+    initSampleQr: () -> Unit,
     navController: NavController,
     focusManager: FocusManager,
     context: Context,
@@ -147,12 +149,23 @@ fun SettingMainScreen(
             }
 
             SingleMenu(
+                imageVector = Icons.Default.QrCodeScanner,
+                title = stringResource(R.string.qrcode_size),
+                bottom = false,
+                onclick = {
+                    initSampleQr()
+                    navController.navigate(ScreenDestination.QrSize)
+                },
+            )
+
+            SingleMenu(
                 imageVector = Icons.Default.Language,
                 title = stringResource(R.string.language),
                 subTitle = KwPassLanguageService.getCurrentLanguageDisplayName(), // io block?
                 onclick = {
                     navController.navigate(ScreenDestination.Language)
-                }
+                },
+                top = false
             )
 
             SingleMenu(
@@ -160,13 +173,13 @@ fun SettingMainScreen(
                 title = stringResource(R.string.app_version),
                 subTitle = "${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE})",
                 bottom = false,
-                onclick = { context.openUri(KwPassUri.STORE_URI) },
+                onclick = { context.openUri(KwPassConst.STORE_URI) },
                 trailingIcon = Icons.AutoMirrored.Filled.OpenInNew
             )
             SingleMenu(
                 painter = painterResource(R.drawable.github_mark),
                 title = stringResource(R.string.github),
-                onclick = { context.openUri(KwPassUri.GITHUB_URI) },
+                onclick = { context.openUri(KwPassConst.GITHUB_URI) },
                 bottom = false,
                 top = false,
                 trailingIcon = Icons.AutoMirrored.Filled.OpenInNew
@@ -222,7 +235,8 @@ fun SettingMainScreenPreview() {
             navController = rememberNavController(),
             focusManager = LocalFocusManager.current,
             context = LocalContext.current,
-            debugAuthKey = {}
+            debugAuthKey = {},
+            initSampleQr = {}
         )
     }
 }
@@ -241,7 +255,8 @@ fun DarkSettingMainScreenPreview() {
             navController = rememberNavController(),
             focusManager = LocalFocusManager.current,
             context = LocalContext.current,
-            debugAuthKey = {}
+            debugAuthKey = {},
+            initSampleQr = {}
         )
     }
 }

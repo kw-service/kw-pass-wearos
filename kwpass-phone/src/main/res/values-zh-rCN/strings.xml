@@ -49,4 +49,10 @@
     <string name="language">语言</string>
     <string name="app_version">应用版本</string>
     <string name="opensource_licence">开源许可</string>
+    <string name="qrcode_size">调整二维码大小</string>
+    <string name="save">保存</string>
+    <string name="not_working_qr">这是用于检查大小的示例二维码。该二维码无效。</string>
+
+    <string name="about_size">哪个大小合适？</string>
+    <string name="about_size_description">请尝试调整二维码大小以提高扫描成功率。此设置适用于 KW Pass 应用内及小部件的二维码大小。</string>
 </resources>

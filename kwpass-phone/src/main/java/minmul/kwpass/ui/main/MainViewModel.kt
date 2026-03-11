@@ -19,8 +19,10 @@ import kotlinx.coroutines.launch
 import minmul.kwpass.R
 import minmul.kwpass.domain.usecase.SyncWatchUseCase
 import minmul.kwpass.domain.usecase.ValidateAccountUseCase
+import minmul.kwpass.service.KwPassConst
 import minmul.kwpass.shared.KwPassException
 import minmul.kwpass.shared.LocalDisk
+import minmul.kwpass.shared.QrGenerator
 import minmul.kwpass.shared.analystics.KwPassLogger
 import minmul.kwpass.shared.domain.GetQrCodeUseCase
 import minmul.kwpass.ui.UiText
@@ -72,13 +74,17 @@ class MainViewModel @Inject constructor(
         startListeningForForcedAccountSync()
 
         viewModelScope.launch {
-            combine(localDisk.userFlow, localDisk.isFirstRun) { user, firstRun ->
-                Pair(user, firstRun)
-            }.collect { (user, firstRun) ->
+            combine(
+                localDisk.userFlow,
+                localDisk.isFirstRun,
+                localDisk.qrSize
+            ) { user, firstRun, qrSize ->
+                Triple(user, firstRun, qrSize)
+            }.collect { (user, firstRun, qrSize) ->
                 val (rid, password, tel) = user
 
                 Timber.tag("DEBUG_USER").d("로드된 정보: 학번=$rid, 비번= ${password.length}자리, 전화=$tel")
-                setDataOnUiState(rid, password, tel)
+                setDataOnUiState(rid, password, tel, qrSize)
 
                 if (isAppReadyToRefresh && !firstRun && validateAccountUseCase.isValidRid(rid)) {
                     isAppReadyToRefresh = false
@@ -315,6 +321,42 @@ class MainViewModel @Inject constructor(
         timerJob?.cancel()
     }
 
+    fun saveQrSizeOnDisk() {
+        viewModelScope.launch {
+            localDisk.saveQrSize(mainUiState.value.process.qrSize)
+        }
+    }
+
+    fun updateQrSize(size: Float) {
+        Timber.i("qr size set to ${size}.dp")
+        viewModelScope.launch {
+            _mainUiState.update { currentState ->
+                currentState.copy(
+                    process = currentState.process.copy(
+                        qrSize = size.toInt()
+                    )
+                )
+            }
+        }
+    }
+
+    fun readySampleQrBitmap() {
+        if (mainUiState.value.process.sampleQrBitmap == null) {
+            viewModelScope.launch {
+                _mainUiState.update { currentState ->
+                    currentState.copy(
+                        process = currentState.process.copy(
+                            sampleQrBitmap = QrGenerator.generateQrBitmapInternal(
+                                content = KwPassConst.SAMPLE_RESPONSE,
+                                margin = 2
+                            )
+                        )
+                    )
+                }
+            }
+        }
+    }
+
     override fun onCleared() {
         super.onCleared()
         stopRefreshTimer()
@@ -393,7 +435,7 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    fun setDataOnUiState(newRid: String, newPassword: String, newTel: String) {
+    fun setDataOnUiState(newRid: String, newPassword: String, newTel: String, qrSize: Int) {
         _mainUiState.update { currentState ->
             currentState.copy(
                 accountInfo = currentState.accountInfo.copy(
@@ -410,7 +452,8 @@ class MainViewModel @Inject constructor(
                     isTelValid = validateAccountUseCase.isValidTel(newTel),  // true 보장됨
                 ),
                 process = currentState.process.copy(
-                    isFetching = false
+                    isFetching = false,
+                    qrSize = qrSize
                 )
             )
         }

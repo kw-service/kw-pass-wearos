@@ -164,7 +164,7 @@ class QrOverlayActivity : ComponentActivity() {
                             bitmap = uiState.process.qrBitmap!!.asImageBitmap(),
                             contentDescription = "QR Code",
                             modifier = Modifier
-                                .size(250.dp)
+                                .size(uiState.process.qrSize.dp)
                                 .clip(RoundedCornerShape(16.dp)),
                             filterQuality = FilterQuality.None
 

@@ -49,4 +49,10 @@
     <string name="language">Ngôn ngữ</string>
     <string name="app_version">Phiên bản ứng dụng</string>
     <string name="opensource_licence">Giấy phép mã nguồn mở</string>
+    <string name="qrcode_size">Điều chỉnh kích thước mã QR</string>
+    <string name="save">Lưu</string>
+    <string name="not_working_qr">Đây là mã QR mẫu để kiểm tra kích thước. Mã này không hợp lệ.</string>
+
+    <string name="about_size">Kích thước nào phù hợp nhất?</string>
+    <string name="about_size_description">Hãy thử điều chỉnh kích thước mã QR để cải thiện tỷ lệ quét thành công. Cài đặt này áp dụng cho kích thước mã QR bên trong ứng dụng KW Pass và tiện ích (widget) của ứng dụng.</string>
 </resources>

@@ -31,6 +31,7 @@ import minmul.kwpass.ui.ScreenDestination
 import minmul.kwpass.ui.home.HomeScreen
 import minmul.kwpass.ui.landing.LandingScreen
 import minmul.kwpass.ui.setting.LanguageScreen
+import minmul.kwpass.ui.setting.QrSizeScreen
 import minmul.kwpass.ui.setting.SettingMainScreen
 
 
@@ -133,7 +134,7 @@ fun MainScreen(
             }
         ) {
             RoundedClippingScreenWarper(
-                animationDuration =animationDuration.toLong()
+                animationDuration = animationDuration.toLong()
             ) {
                 SettingMainScreen(
                     mainUiState = mainUiState,
@@ -145,7 +146,8 @@ fun MainScreen(
                     onTelChange = { mainViewModel.updateTelInput(it) },
                     onSave = { mainViewModel.setAccountData() },
                     context = context,
-                    debugAuthKey = { mainViewModel.removeAuthKeyOnDisk() }
+                    debugAuthKey = { mainViewModel.removeAuthKeyOnDisk() },
+                    initSampleQr = { mainViewModel.readySampleQrBitmap() }
                 )
             }
         }
@@ -165,6 +167,28 @@ fun MainScreen(
             ) {
                 LanguageScreen(
                     navController = navController,
+                )
+            }
+        }
+
+        composable<ScreenDestination.QrSize>(
+            enterTransition = {
+                slideInHorizontally(initialOffsetX = { it }, animationSpec = tweenSpec) +
+                        scaleIn(animationSpec = tween(animationDuration), initialScale = 0.92f)
+            },
+            popExitTransition = {
+                slideOutHorizontally(targetOffsetX = { it }, animationSpec = tweenSpec) +
+                        scaleOut(animationSpec = tween(animationDuration), targetScale = 0.86f)
+            }
+        ) {
+            RoundedClippingScreenWarper(
+                animationDuration = animationDuration.toLong()
+            ) {
+                QrSizeScreen(
+                    navController = navController,
+                    mainUiState = mainUiState,
+                    onQrSizeModified = { mainViewModel.updateQrSize(it) },
+                    saveQrSizeOnDisk = {mainViewModel.saveQrSizeOnDisk()}
                 )
             }
         }
