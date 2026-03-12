@@ -16,5 +16,5 @@ sealed interface ScreenDestination {
     data object Language : ScreenDestination
 
     @Serializable
-    data object QrSize: ScreenDestination
+    data object QrSize : ScreenDestination
 }

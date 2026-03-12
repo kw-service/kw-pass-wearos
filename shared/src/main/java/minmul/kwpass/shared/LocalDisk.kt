@@ -24,7 +24,7 @@ class LocalDisk @Inject constructor(
         val KEY_TEL = stringPreferencesKey("tel") // 전화번호
         val KEY_IS_FIRST_RUN = booleanPreferencesKey("is_first_run")
         val AUTH_KEY = stringPreferencesKey("")
-        val QR_SIZE = intPreferencesKey("256")
+        val QR_SIZE = intPreferencesKey("qr_size")
     }
 
 

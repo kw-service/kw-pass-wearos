@@ -84,7 +84,8 @@ class MainViewModel @Inject constructor(
                 val (rid, password, tel) = user
 
                 Timber.tag("DEBUG_USER").d("로드된 정보: 학번=$rid, 비번= ${password.length}자리, 전화=$tel")
-                setDataOnUiState(rid, password, tel, qrSize)
+                setDataOnUiState(rid, password, tel)
+                updateQrSize(qrSize.toFloat())
 
                 if (isAppReadyToRefresh && !firstRun && validateAccountUseCase.isValidRid(rid)) {
                     isAppReadyToRefresh = false
@@ -329,14 +330,12 @@ class MainViewModel @Inject constructor(
 
     fun updateQrSize(size: Float) {
         Timber.i("qr size set to ${size}.dp")
-        viewModelScope.launch {
-            _mainUiState.update { currentState ->
-                currentState.copy(
-                    process = currentState.process.copy(
-                        qrSize = size.toInt()
-                    )
+        _mainUiState.update { currentState ->
+            currentState.copy(
+                process = currentState.process.copy(
+                    qrSize = size.toInt()
                 )
-            }
+            )
         }
     }
 
@@ -435,7 +434,7 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    fun setDataOnUiState(newRid: String, newPassword: String, newTel: String, qrSize: Int) {
+    fun setDataOnUiState(newRid: String, newPassword: String, newTel: String) {
         _mainUiState.update { currentState ->
             currentState.copy(
                 accountInfo = currentState.accountInfo.copy(
@@ -452,8 +451,7 @@ class MainViewModel @Inject constructor(
                     isTelValid = validateAccountUseCase.isValidTel(newTel),  // true 보장됨
                 ),
                 process = currentState.process.copy(
-                    isFetching = false,
-                    qrSize = qrSize
+                    isFetching = false
                 )
             )
         }

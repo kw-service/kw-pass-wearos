@@ -188,7 +188,7 @@ fun MainScreen(
                     navController = navController,
                     mainUiState = mainUiState,
                     onQrSizeModified = { mainViewModel.updateQrSize(it) },
-                    saveQrSizeOnDisk = {mainViewModel.saveQrSizeOnDisk()}
+                    saveQrSizeOnDisk = { mainViewModel.saveQrSizeOnDisk() }
                 )
             }
         }
