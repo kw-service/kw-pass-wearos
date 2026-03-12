@@ -53,6 +53,12 @@
     <string name="app_version">앱 버전</string>
     <string name="github" translatable="false">KW Pass for WearOS GitHub</string>
     <string name="opensource_licence">오픈소스 라이선스</string>
+    <string name="qrcode_size">QR코드 크기 조정</string>
+    <string name="save">저장</string>
+    <string name="not_working_qr">크기 확인을 위한 QR코드입니다. 유효하지 않습니다.</string>
+
+    <string name="about_size">어떤 크기가 좋을까요?</string>
+    <string name="about_size_description">인식 성공률 개선을 위해 QR코드 크기를 조정해 보세요. 이 설정은 KW Pass 앱 내부와 위젯의 QR코드 크기에 적용됩니다.</string>
 
     <string name="korean" translatable="false">한국어</string>
     <string name="english" translatable="false">English</string>

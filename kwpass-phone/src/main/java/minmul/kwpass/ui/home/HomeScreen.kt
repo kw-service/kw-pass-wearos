@@ -149,7 +149,8 @@ fun HomeScreen(
                 isFetching = processState.isFetching,
                 qrBitmap = processState.qrBitmap,
                 unavailable = processState.fetchFailed,
-                refresh = refreshQR
+                refresh = refreshQR,
+                qrSize = processState.qrSize
             )
             Spacer(modifier = Modifier.height(24.dp))
             Button(

@@ -44,7 +44,8 @@ fun QrView(
     isFetching: Boolean,
     unavailable: Boolean,
     qrBitmap: Bitmap?,
-    refresh: () -> Unit
+    refresh: () -> Unit,
+    qrSize: Int
 ) {
     val interactionSource = remember { MutableInteractionSource() }
 
@@ -53,11 +54,12 @@ fun QrView(
         animationSpec = tween(durationMillis = 200)
     )
 
+
+    val shrunkQrSize: Int = (qrSize * 0.9375).toInt()
     val animatedQrSize by animateDpAsState(
-        targetValue = if (isFetching || unavailable) 240.dp else 256.dp,
+        targetValue = if (isFetching || unavailable) shrunkQrSize.dp else qrSize.dp,
         animationSpec = tween(durationMillis = 400)
     )
-
 
     val qrAlpha by animateFloatAsState(
         targetValue = if (isFetching || unavailable) 0.5f else 1.0f,

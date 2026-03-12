@@ -49,4 +49,10 @@
     <string name="language">Language</string>
     <string name="app_version">App Version</string>
     <string name="opensource_licence">Open Source Licenses</string>
+    <string name="qrcode_size">Adjust QR code size</string>
+    <string name="save">Save</string>
+    <string name="not_working_qr">This is a sample QR code for size checking. It is invalid.</string>
+
+    <string name="about_size">Which size is best?</string>
+    <string name="about_size_description">Try adjusting the QR code size to improve the scan success rate. This setting applies to the QR code inside the KW Pass app and its widget.</string>
 </resources>

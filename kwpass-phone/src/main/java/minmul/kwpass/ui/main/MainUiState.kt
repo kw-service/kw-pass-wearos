@@ -32,7 +32,9 @@ data class ProcessState(
     val fetchSucceeded: Boolean = false,
     val initialStatus: Boolean = true,
     val refreshTimeLeft: Int = 0,
-    val qrCreationTime: Long = 0L
+    val qrCreationTime: Long = 0L,
+    val qrSize: Int = 256,
+    val sampleQrBitmap: Bitmap? = null
 )
 
 data class MainUiState(

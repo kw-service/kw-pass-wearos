@@ -72,10 +72,8 @@ dependencies {
     implementation(libs.androidx.wear.tooling.preview)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.core.splashscreen)
-    implementation(libs.play.services.wearable)
     implementation(libs.androidx.compose.navigation)
     implementation(libs.compose.material3)
-    implementation(libs.androidx.compose.foundation)
     implementation(libs.compose.ui.tooling)
     implementation(libs.kotlinx.coroutines.play.services)
     implementation(libs.androidx.material3)
@@ -93,7 +91,6 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.firebase.analytics)
-    implementation(libs.firebase.crashlytics)
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)

@@ -49,4 +49,10 @@
     <string name="language">言語</string>
     <string name="app_version">アプリバージョン</string>
     <string name="opensource_licence">オープンソースライセンス</string>
+    <string name="qrcode_size">QRコードのサイズ調整</string>
+    <string name="save">保存</string>
+    <string name="not_working_qr">サイズ確認用のQRコードです。有効ではありません。</string>
+
+    <string name="about_size">どのサイズが良いですか？</string>
+    <string name="about_size_description">読み取り成功率を向上させるために、QRコードのサイズを調整してみてください。この設定は、KW Passアプリ内およびウィジェットのQRコードのサイズに適用されます。</string>
 </resources>

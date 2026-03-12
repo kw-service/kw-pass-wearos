@@ -49,4 +49,10 @@
     <string name="language">Язык</string>
     <string name="app_version">Версия приложения</string>
     <string name="opensource_licence">Лицензии открытого ПО</string>
+    <string name="qrcode_size">Настройка размера QR-кода</string>
+    <string name="save">Сохранить</string>
+    <string name="not_working_qr">Это пример QR-кода для проверки размера. Он недействителен.</string>
+
+    <string name="about_size">Какой размер подходит лучше?</string>
+    <string name="about_size_description">Попробуйте изменить размер QR-кода, чтобы повысить успешность сканирования. Эта настройка применяется к QR-кодам внутри приложения KW Pass и его виджета.</string>
 </resources>
