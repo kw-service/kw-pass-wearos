@@ -78,6 +78,8 @@ fun SettingScreenAppBar(
     )
 }
 
+// TODO: QR 페이지로 이동 시 계정 입력 상태 유지되도록 입력 필드와 QR크기의 UiState 조정
+
 @Composable
 fun SettingMainScreen(
     modifier: Modifier = Modifier,
